@@ -24,5 +24,13 @@ describe('App Init - SetupEnv', () => {
 
     });
 
+    it('should throw an error if .env does not have a valid JSON', () => {
+        const dotEnvPath = path.resolve('./src/helpers/.bad_env_spec');
+        dotenv.config({ 'path': dotEnvPath });
+
+        expect(() => SetupEnv()).to.throw();
+
+    });
+
 
 })
