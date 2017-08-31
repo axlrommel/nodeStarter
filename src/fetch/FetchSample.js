@@ -6,7 +6,6 @@ export const FetchSample = async (args) => {
     
     try{
         const res =  await fetch('http://httpbin.org/get' + args);
-        console.log(res)
         if(res.status === 200) {
             const body =  await res.json()
             return body.args

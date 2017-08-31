@@ -4,10 +4,10 @@ import { FetchSample } from './fetch/FetchSample.js';
 
 const FetchPin = async () => {
     const val = await FetchSample("?rommel=the_best")
-    
+
     // eslint-disable-next-line no-console
     console.log(val)
 }
 
 //run on an interval
-setInterval(FetchPin,10*1000)
+//setInterval(FetchPin,10*1000)
