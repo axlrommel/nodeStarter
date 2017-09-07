@@ -6,8 +6,6 @@ const deepValueIn1 = require('../mock/JSONSamples1_spec').deepValueIn1;
 const deepValueOut1 = require('../mock/JSONSamples1_spec').deepValueOut1;
 const deepValueIn2 = require('../mock/JSONSamples1_spec').deepValueIn2;
 const deepValueOut2 = require('../mock/JSONSamples1_spec').deepValueOut2;
-const shallowValueIn = require('../mock/JSONSamples1_spec').shallowValueIn;
-const shallowValueOut = require('../mock/JSONSamples1_spec').shallowValueOut;
 const extraFieldsIn = require('../mock/JSONSamples1_spec').extraFieldsIn;
 const extraFieldsOut = require('../mock/JSONSamples1_spec').extraFieldsOut;
 
@@ -15,54 +13,54 @@ const chai = require('chai');
 
 const input = {
     "main": {
-        "pnls": [
+        "q1": [
             {
-              "id": "Climate/Drive/Fieldview",
-              "accrualYear": "2016",
-              "expectedDisc": "123"
+              "id": "ABC",
+              "year": "2016",
+              "val": "123"
             },
             {
-              "id": "Climate/Drive/Fieldview",
-              "accrualYear": "2016",
-              "expectedDisc": "123"
+              "id": "ABC",
+              "year": "2016",
+              "val": "124"
             }
           ]}}
 const output = {
     "main": {
-        "pnls": [
+        "q1": [
             {
-              "pnlid": "Climate/Drive/Fieldview",
-              "accrualYear": "2016",
-              "expectedDisc": "123"
+              "pnlid": "ABC",
+              "year": "2016",
+              "val": "123"
             },
             {
-              "pnlid": "Climate/Drive/Fieldview",
-              "accrualYear": "2016",
-              "expectedDisc": "123"
+              "pnlid": "ABC",
+              "year": "2016",
+              "val": "124"
             }
           ]}}
 
 const fToRemove = {
-  "key_schema_id": 762,
-  "value_schema_id": 842,
-  "records": [
+  "q1": 762,
+  "q2": 842,
+  "recs": [
     {
       "key": 19141,
       "value": {
-        "_id": "64e9e93848d0733aa024d80ffd03b8a7",
-        "_rev": "21-a04908eed57d063399b4ac00e039b3a0",
-        "pnls": [
+        "gid": "64e9e93848d0733aa024d80ffd03b8a7",
+        "gid1": "21-a04908eed57d063399b4ac00e039b3a0",
+        "rt": [
           {
-            "id": "Climate/Drive/Fieldview"
+            "id": "XYZ"
           }
         ],
-        "actionType": "U",
-        "pid": "STRMARINE243",
+        "t": "U",
+        "p": "ABC",
         "messageHeader": {
-          "messageUUId": "c739c2b0-5db3-11e7-936a-f7e83d9a4fa1",
-          "messageTimestamp": "2017-06-30T16:47:18.107Z",
-          "messageProducer": "Company360.DARTExtracter",
-          "messageLineage": null
+          "UUId": "c739c2b0-5db3-11e7-936a-f7e83d9a4fa1",
+          "Timestamp": "2017-06-30T16:47:18.107Z",
+          "prod": "RTX",
+          "nullValue": null
         }
       }
     }
@@ -110,11 +108,6 @@ describe('Pulls .value forward',()=>{
         chai.expect(JSONFieldsTransform((deepValueIn2),
             (item) =>{return item && item.value !== undefined},
             (item) => {return item.value})).to.deep.equal(deepValueOut2);
-    });
-    it('should pull all .value one level up',()=>{
-        chai.expect(JSONFieldsTransform((shallowValueIn),
-            (item) =>{return item && item.value !== undefined},
-            (item) => {return item.value})).to.deep.equal(shallowValueOut);
     });
 });
 

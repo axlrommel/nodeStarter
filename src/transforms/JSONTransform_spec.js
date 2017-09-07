@@ -5,8 +5,6 @@ const oneRow = require('../mock/JSONSamples_spec').oneRow;
 const oneElement = require('../mock/JSONSamples_spec').oneElement;
 const noRows = require('../mock/JSONSamples_spec').noRows;
 const noElements = require('../mock/JSONSamples_spec').noElements;
-const dbObject = require('../mock/JSONSamples_spec').dbObject;
-const sentObject = require('../mock/JSONSamples_spec').sentObject;
 const oneDoc = require('../mock/JSONSamples_spec').oneDoc;
 const oneDocSent = require('../mock/JSONSamples_spec').oneDocSent;
 const expect = require('chai').expect;
@@ -35,13 +33,7 @@ describe('Build array of programs that will be returned',()=>{
     });
 });
 
-describe('Transforms Couch db format to API expected format',()=>{
-    it('When querying Couchdb views',()=>{
-      const req = {body : dbObject};
-      // eslint-disable-next-line no-empty-function
-      JSONTransform(req,undefined,()=>{});
-      expect(req.body).to.deep.equal(sentObject);
-    });
+describe('Transforms JSON',()=>{
 
     it('When querying individual ID',()=>{
       const req = {body : oneDoc};

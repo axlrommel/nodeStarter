@@ -1,18 +1,9 @@
-const R = require('ramda');
 
-const a = (x)=>{return x;}
-
-const b = (F)=>{return F(12)}
-
-const c = (F)=>{
-  return (y)=>{F(y+2);}
-}
-
-[1,2,3].map(R.add(5));
-
-[[1,2,3],[4,5,6],[7,8,9]].map(R.adjust(R.add(5),1))
-
-
+// const a = (x)=>{return x;}
+// const b = (F)=>{return F(12)}
+// const c = (F)=>{
+//   return (y)=>{F(y+2);}
+// }
 
 // console.log(a(1)); //1 value
 // console.log(b(a)); //12 because b(a) returns a(12)
@@ -21,9 +12,7 @@ const c = (F)=>{
 // console.log(c);
 
 //console.log(c(b(4))); //blows up because b(4) is a value
-console.log(c(a)(12));
-
-
+//console.log(c(a)(12));
 
 // console.log(c(b(a))); // returns a function
 // console.log(c(a)(12)); // undefined
@@ -69,19 +58,6 @@ console.log(c(a)(12));
 // z(q,r) =/=> q(r)(12) => r(24) = 27
 ////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const e = (F,x)=>{
 //   return (y)=>{return F(x,y)}
 // }
@@ -90,15 +66,6 @@ console.log(c(a)(12));
 // g(6,7) =/=> 13
 // e(g,6) =/=> (y)=>{return g(6,y)}
 // e(g,6)(7) =/=> 13
-
-
-
-
-
-
-
-
-
 
 // const d = c(a)
 // b(d) =/=> 
@@ -110,15 +77,6 @@ console.log(c(a)(12));
 // a(c) //function === c
 // c(a)(12) //14
 //  //
-
-
-
-
-
-
-
-
-
 
 // a(12) =/=> 12
 // b(a) =/=> 12

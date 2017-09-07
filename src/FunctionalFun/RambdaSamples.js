@@ -1,5 +1,8 @@
 const R = require('rambda');
 
+[1,2,3].map(R.add(5)); //[ 6, 7, 8 ]
+[[1,2,3],[4,5,6],[7,8,9]].map(R.adjust(R.add(5),1)) //[ [ 1, 7, 3 ], [ 4, 10, 6 ], [ 7, 13, 9 ] ]
+
 const greet = R.replace('{name}', R.__, 'Hello, {name}!');
 greet('Alice'); //=> 'Hello, Alice!'
 
