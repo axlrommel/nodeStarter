@@ -20,7 +20,7 @@
 // console.log(c(1));
 // console.log(b(c));
 
-// const Blah = a => b => c => (g,h,i) => console.log(a,b,c,g,h,i)
+// const Blah2 = a => b => c => (g,h,i) => console.log(a+b+c+g+h+i)
 
 // const Blah = (a) => {
 //     return (b) => {
@@ -38,12 +38,6 @@
 // Blah(12)(13) // (c)=> -------
 // Blah(12)(13)(2) // (g,h,i)=> ----
 // Blah(12)(13)(2)(1,2,3) //33
-
-// const a = (x)=>{return x;}
-// const b = (F)=>{return F(12)}
-// const c = (F)=>{
-//   return (y)=>{F(y+2);}
-// }
 
 
 // //////

@@ -1,6 +1,6 @@
-const R = require('ramda');
+const R = require('rambda');
 
-//Day 1:
+//fn adds two params
 const Logger = (func)=>(y)=>(x)=>{
     return func(y + x);
   };
@@ -8,6 +8,10 @@ const Logger = (func)=>(y)=>(x)=>{
   const Add3 = (x)=>{
     return x+3;
   }
+
+  Logger(Add3)(4)(5) //12
+  Logger(console.log)("hi")(" Rommel") //hi Rommel
+
   const Obj1 = {Logger:Logger(console.log)('you told me to say: ')
               };
   
