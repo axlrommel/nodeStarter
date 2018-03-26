@@ -37,6 +37,7 @@
   "author": "rommelvillagomez",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.209.0",
     "avsc": "^5.0.3",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
